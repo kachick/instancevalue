@@ -82,8 +82,8 @@ module InstanceValue
   end
   
   # @example
-  #     val(name)              #=> get
-  #     val(name, const_value) #=> set
+  #     val(name)        #=> get
+  #     val(name, value) #=> set
   def val(name, *values)
     case values.length
     when 0
