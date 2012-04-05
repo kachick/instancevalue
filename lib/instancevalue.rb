@@ -22,7 +22,7 @@
 #     person.age                                    #=> age at runtime
 #     person.instance_eval{val :birthday, Time.now} #=> Exception
 module InstanceValue
-  VERSION = '0.0.1'.freeze
+  VERSION = '0.0.2'.freeze
 
   module Eigen
     private
@@ -39,20 +39,6 @@ module InstanceValue
     
     def included(mod)
       mod.extend Eigen
-    end
-  end
-
-  # @example
-  #     val(name)              #=> get
-  #     val(name, const_value) #=> set
-  def val(name, *values)
-    case values.length
-    when 0
-      instance_value_get name
-    when 1
-      instance_value_set name, values.first
-    else
-      raise ArgumentError, "wrong number of Argument #{values.length} for 1 or 2"
     end
   end
 
@@ -85,11 +71,27 @@ module InstanceValue
     singleton_class::VALUES.keys
   end
   
+  private
+  
   def remove_instance_value(name)
     if instance_value_defined? name
       singleton_class::VALUES.delete_key name.to_sym
     else
       raise NameError
+    end
+  end
+  
+  # @example
+  #     val(name)              #=> get
+  #     val(name, const_value) #=> set
+  def val(name, *values)
+    case values.length
+    when 0
+      instance_value_get name
+    when 1
+      instance_value_set name, values.first
+    else
+      raise ArgumentError, "wrong number of Argument #{values.length} for 1 or 2"
     end
   end
 end
