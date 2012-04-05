@@ -75,7 +75,7 @@ module InstanceValue
   
   def remove_instance_value(name)
     if instance_value_defined? name
-      singleton_class::VALUES.delete_key name.to_sym
+      singleton_class::VALUES.delete name.to_sym
     else
       raise NameError
     end
