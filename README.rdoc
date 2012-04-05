@@ -1,0 +1,68 @@
+= Instance Value
+
+* http://github.com/kachick/instancevalue
+* http://rubygems.org/gems/instancevalue
+* http://rubyforge.org/projects/instancevalue
+
+== Description
+
+Set constant values for each instance.
+
+== Usage
+
+* setup
+
+    require 'instancevalue'
+
+* overview
+
+    class Person
+      include InstanceValue
+      
+      value_reader :birthday
+
+      def initialize(birthday)
+        val :birthday, birthday
+      end
+
+      def age
+        (Time.now - val(:birthday)) / (60 * 60 * 24 * 365)
+      end
+    end
+
+    person = Person.new Time.at 8888
+    p person.birthday
+    p person.age                                    #=> age at runtime
+    person.instance_eval{val :birthday, Time.now}   #=> Exception
+
+* It has instance_variable like API
+    
+    * .value_reader
+    * #instance_value_defined?
+    * #instance_value_get
+    * #instance_value_set
+    * #instance_values
+    * #remove_instance_value
+
+* Aliased shortname
+
+    * #val
+    
+== Requirements
+
+* Ruby 1.9.2 or later
+  
+  target release versions
+  
+  * 1.9.3-p125
+  * 1.9.2-p290
+
+== Installation
+
+* gem install instancevalue
+
+== License
+
+Copyright (C) 2012  Kenichi Kamiya
+
+The MIT/X11 License (See the file LICENSE)
