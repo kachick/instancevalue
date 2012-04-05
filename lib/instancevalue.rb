@@ -18,7 +18,7 @@
 #     end
 #     
 #     person = Person.new YOUR_BIRTHDAY
-#     person.birthday
+#     person.birthday                               #=> YOUR_BIRTHDAY
 #     person.age                                    #=> age at runtime
 #     person.instance_eval{val :birthday, Time.now} #=> Exception
 module InstanceValue

@@ -30,9 +30,9 @@ Set constant values for each instance.
       end
     end
 
-    person = Person.new Time.at 8888
-    p person.birthday
-    p person.age                                    #=> age at runtime
+    person = Person.new Time.at YOUR_BIRTHDAY
+    person.birthday                                 #=> YOUR_BIRTHDAY
+    person.age                                      #=> age at runtime
     person.instance_eval{val :birthday, Time.now}   #=> Exception
 
 * It has instance_variable like API
