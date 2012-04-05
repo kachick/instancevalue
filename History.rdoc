@@ -1,3 +1,13 @@
+=== 0.0.2 2012-04-06
+
+* modify:
+  * scope (public -> private):
+    * val
+    * remove_instance_value
+
+* fix:
+  * remove_instance_value
+
 === 0.0.1 2012-04-06
 
 * 1 major enhancement:
