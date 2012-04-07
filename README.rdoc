@@ -37,16 +37,16 @@ Set constant values for each instance.
 
 * It has instance_variable like API
     
-    * .value_reader
-    * #instance_value_defined?
-    * #instance_value_get
-    * #instance_value_set
-    * #instance_values
-    * #remove_instance_value
+* .value_reader
+* #instance_value_defined?
+* #instance_value_get
+* #instance_value_set
+* #instance_values
+* #remove_instance_value
 
 * Aliased shortname
 
-    * #val
+* #val
     
 == Requirements
 
