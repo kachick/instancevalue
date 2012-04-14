@@ -71,6 +71,14 @@ module InstanceValue
     singleton_class::VALUES.keys
   end
   
+  def inspect
+    super.sub(/>\z/){
+      singleton_class::VALUES.map{|name, value|
+        " #{name}=#{value.inspect}"
+      }.join + '>'
+    }
+  end
+  
   private
   
   def initialize_copy(original)

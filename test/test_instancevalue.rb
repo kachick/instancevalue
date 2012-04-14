@@ -62,4 +62,10 @@ class TestBasicCase < Test::Unit::TestCase
     
     assert_same false, (person.instance_values == person2.instance_values)
   end
+  
+  def test_inspect
+    person = Person.new 9753
+    person.instance_variable_set :@var, 1234
+    assert_equal true, !!(/\A#<TestBasicCase::Person:\w+ @var=1234 birthday=9753>\z/ =~ person.inspect)
+  end
 end
