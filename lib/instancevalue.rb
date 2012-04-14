@@ -22,7 +22,9 @@
 #     person.age                                    #=> age at runtime
 #     person.instance_eval{val :birthday, Time.now} #=> Exception
 module InstanceValue
+
   VERSION = '0.0.3'.freeze
+  VALUES_KEYSTORE_NAME = :VALUES_KEYSTORE
 
   module Eigen
     private
@@ -74,19 +76,20 @@ module InstanceValue
     }
   end
   
-  private
+  protected
   
   def _values
-    if singleton_class.const_defined? :VALUES
-      singleton_class::VALUES
+    if singleton_class.const_defined? VALUES_KEYSTORE_NAME
+      singleton_class.const_get VALUES_KEYSTORE_NAME
     else
-      singleton_class.const_set :VALUES, {}
+      singleton_class.const_set VALUES_KEYSTORE_NAME, {}
     end
   end
   
+  private
+  
   def initialize_copy(original)
-    singleton_class.const_set :VALUES,
-      original.singleton_class::VALUES.dup
+    singleton_class.const_set VALUES_KEYSTORE_NAME, original._values.dup
   end
   
   def remove_instance_value(name)
@@ -110,4 +113,5 @@ module InstanceValue
       raise ArgumentError, "wrong number of Argument #{values.length} for 1 or 2"
     end
   end
+
 end
