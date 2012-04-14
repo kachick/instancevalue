@@ -61,7 +61,7 @@ module InstanceValue
   
   def instance_value_set(name, value)
     if instance_value_defined? name
-      raise "value #{} was already binded"
+      raise "the value(#{name}) was already binded"
     else
       singleton_class::VALUES[name.to_sym] = value
     end
