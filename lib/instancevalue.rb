@@ -47,39 +47,42 @@ module InstanceValue
       raise TypeError
     end
     
-    if singleton_class.const_defined? :VALUES
-      singleton_class::VALUES.has_key? name.to_sym
-    else
-      singleton_class.const_set :VALUES, {}
-      false
-    end
+    _values.has_key? name.to_sym
   end
   
   def instance_value_get(name)
-    instance_value_defined?(name) ? singleton_class::VALUES[name.to_sym] : nil
+    instance_value_defined?(name) ? _values[name.to_sym] : nil
   end
   
   def instance_value_set(name, value)
     if instance_value_defined? name
       raise "the value(#{name}) was already binded"
     else
-      singleton_class::VALUES[name.to_sym] = value
+      _values[name.to_sym] = value
     end
   end
   
   def instance_values
-    singleton_class::VALUES.keys
+    _values.keys
   end
   
   def inspect
     super.sub(/>\z/){
-      singleton_class::VALUES.map{|name, value|
+      _values.map{|name, value|
         " #{name}=#{value.inspect}"
       }.join + '>'
     }
   end
   
   private
+  
+  def _values
+    if singleton_class.const_defined? :VALUES
+      singleton_class::VALUES
+    else
+      singleton_class.const_set :VALUES, {}
+    end
+  end
   
   def initialize_copy(original)
     singleton_class.const_set :VALUES,
@@ -88,7 +91,7 @@ module InstanceValue
   
   def remove_instance_value(name)
     if instance_value_defined? name
-      singleton_class::VALUES.delete name.to_sym
+      _values.delete name.to_sym
     else
       raise NameError
     end
