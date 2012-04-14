@@ -40,4 +40,26 @@ class TestBasicCase < Test::Unit::TestCase
       person.name
     end
   end
+  
+  def test_dup
+    person = Person.new Time.now
+    person2 = person.dup
+    
+    assert_equal person.instance_values, person2.instance_values
+    
+    person2.instance_value_set :newer, 123
+    
+    assert_same false, (person.instance_values == person2.instance_values)
+  end
+  
+  def test_clone
+    person = Person.new Time.now
+    person2 = person.clone
+    
+    assert_equal person.instance_values, person2.instance_values
+    
+    person2.instance_value_set :newer, 123
+    
+    assert_same false, (person.instance_values == person2.instance_values)
+  end
 end

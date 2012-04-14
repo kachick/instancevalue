@@ -22,7 +22,7 @@
 #     person.age                                    #=> age at runtime
 #     person.instance_eval{val :birthday, Time.now} #=> Exception
 module InstanceValue
-  VERSION = '0.0.2'.freeze
+  VERSION = '0.0.3'.freeze
 
   module Eigen
     private
@@ -72,6 +72,11 @@ module InstanceValue
   end
   
   private
+  
+  def initialize_copy(original)
+    singleton_class.const_set :VALUES,
+      original.singleton_class::VALUES.dup
+  end
   
   def remove_instance_value(name)
     if instance_value_defined? name
