@@ -13,7 +13,7 @@
 #       end
 #
 #       def age
-#         (Time.now - val(:birthday)) / (60 * 60 * 24 * 365)
+#         (Time.now - birthday) / (60 * 60 * 24 * 365)
 #       end
 #     end
 #     

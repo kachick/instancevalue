@@ -35,18 +35,18 @@ Set constant values for each instance.
     person.age                                      #=> age at runtime
     person.instance_eval{val :birthday, Time.now}   #=> Exception
 
-* It has instance_variable like API
-    
-* .value_reader
-* #instance_value_defined?
-* #instance_value_get
-* #instance_value_set
-* #instance_values
-* #remove_instance_value
+* It has instance_variable like API:
 
-* Aliased shortname
+  * .value_reader
+  * #instance_value_defined?
+  * #instance_value_get
+  * #instance_value_set
+  * #instance_values
+  * #remove_instance_value
 
-* #val
+* Aliased shortname:
+
+  * #val
     
 == Requirements
 
