@@ -58,7 +58,7 @@ module InstanceValue
   
   def instance_value_set(name, value)
     if instance_value_defined? name
-      raise "the value(#{name}) was already binded"
+      raise "value(#{name}) was already bound"
     else
       _values[name.to_sym] = value
     end
