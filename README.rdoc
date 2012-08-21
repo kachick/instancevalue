@@ -1,8 +1,6 @@
-= Instance Value
+= instancevalue
 
-* http://github.com/kachick/instancevalue
-* http://rubygems.org/gems/instancevalue
-* http://rubyforge.org/projects/instancevalue
+{<img src="https://secure.travis-ci.org/kachick/instancevalue.png" />}[http://travis-ci.org/kachick/instancevalue]
 
 == Description
 
@@ -10,13 +8,14 @@ Set constant values for each instance.
 
 == Usage
 
-* setup
+* Setup
 
     require 'instancevalue'
 
-* overview
+* Overview
 
     class Person
+
       include InstanceValue
       
       value_reader :birthday
@@ -28,6 +27,7 @@ Set constant values for each instance.
       def age
         (Time.now - birthday) / (60 * 60 * 24 * 365)
       end
+
     end
 
     person = Person.new Time.at YOUR_BIRTHDAY
@@ -35,7 +35,7 @@ Set constant values for each instance.
     person.age                                      #=> age at runtime
     person.instance_eval{val :birthday, Time.now}   #=> Exception
 
-* It has instance_variable like API:
+* It has instance_variable like API
 
   * .value_reader
   * #instance_value_defined?
@@ -44,25 +44,30 @@ Set constant values for each instance.
   * #instance_values
   * #remove_instance_value
 
-* Aliased shortname:
+* Aliased shortname
 
   * #val
     
 == Requirements
 
 * Ruby 1.9.2 or later
-  
-  target release versions
-  
-  * 1.9.3-p125
-  * 1.9.2-p290
 
 == Installation
 
-* gem install instancevalue
+    gem install instancevalue
+
+== Links
+
+code   :: https://github.com/kachick/instancevalue
+issues :: https://github.com/kachick/instancevalue/issues
+CI     :: http://travis-ci.org/#!/kachick/instancevalue
+gem    :: https://rubygems.org/gems/instancevalue
+gem+   :: http://metagem.info/gems/instancevalue
 
 == License
 
-Copyright (C) 2012  Kenichi Kamiya
+The MIT X License
 
-The MIT/X11 License (See the file LICENSE)
+Copyright (c) 2012 Kenichi Kamiya
+
+See the file LICENSE for further details.
