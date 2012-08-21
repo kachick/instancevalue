@@ -4,6 +4,9 @@ History.rdoc
 Manifest.txt
 Rakefile
 lib/instancevalue.rb
+lib/instancevalue/version.rb
+lib/instancevalue/classmethods.rb
+lib/instancevalue/singletonclass.rb
 test/test_helper.rb
 test/test_instancevalue.rb
-example/example.rb
+examples/README.rb
