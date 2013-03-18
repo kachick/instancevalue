@@ -1,5 +1,4 @@
-# Instance Value
-#   Set constant values for each instance.
+# instancevalue - Constant values for each instance.
 #   Copyright (C) 2012 Kenichi Kamiya
 
 require_relative 'instancevalue/version'
