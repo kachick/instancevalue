@@ -1,5 +1,5 @@
 $VERBOSE = true
-require_relative 'test_helper'
+require_relative 'helper'
 
 class TestBasicCase < Test::Unit::TestCase
   class Person

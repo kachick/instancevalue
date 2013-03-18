@@ -4,7 +4,7 @@
 
 require_relative 'instancevalue/version'
 require_relative 'instancevalue/classmethods'
-require_relative 'instancevalue/singletonclass'
+require_relative 'instancevalue/singleton_class'
 
 # @example Overview
 #     class Person
