@@ -23,7 +23,7 @@ Features
 
 ### Aliased shortname
 
-* #val 
+* #val
 
 Usage
 -----
@@ -34,7 +34,7 @@ require 'instancevalue'
 class Person
 
   include InstanceValue
-  
+
   value_reader :birthday
 
   def initialize(birthday)
@@ -61,8 +61,15 @@ Requirements
 Install
 -------
 
-```bash
-$ gem install instancevalue
+```shell
+gem install instancevalue
+```
+
+Development
+----
+
+```shell
+bundle exec rake
 ```
 
 Link
@@ -78,6 +85,6 @@ Link
 License
 --------
 
-The MIT X11 License  
-Copyright (c) 2012 Kenichi Kamiya  
+The MIT X11 License
+Copyright (c) 2012 Kenichi Kamiya
 See MIT-LICENSE for further details.
