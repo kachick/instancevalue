@@ -56,7 +56,7 @@ person.instance_eval{val :birthday, Time.now}   #=> Exception
 Requirements
 -------------
 
-* [Ruby 2.3.3 or later](http://travis-ci.org/#!/kachick/instancevalue)
+* Expect Ruby 2.3.3 or later
 
 Install
 -------
