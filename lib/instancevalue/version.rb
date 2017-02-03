@@ -1,5 +1,5 @@
 module InstanceValue
 
-  VERSION = '0.0.3.1'.freeze
+  VERSION = '0.0.4'.freeze
 
 end
