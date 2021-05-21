@@ -5,7 +5,6 @@ Gem::Specification.new do |gem|
   gem.email         = ['kachick1+ruby@gmail.com']
   gem.description   = %q{Constant values for each instance.}
   gem.summary       = %q{Constant values for each instance.}
-  gem.homepage      = 'http://kachick.github.com/instancevalue'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

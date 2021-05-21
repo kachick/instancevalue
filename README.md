@@ -1,8 +1,11 @@
 instancevalue
 =============
 
-[![Build Status](https://secure.travis-ci.org/kachick/instancevalue.png)](http://travis-ci.org/kachick/instancevalue)
-[![Gem Version](https://badge.fury.io/rb/instancevalue.png)](http://badge.fury.io/rb/instancevalue)
+* ***This repository is archived***
+* ***No longer maintained***
+* ***All versions have been yanked from https://rubygems.org for releasing valuable namespace for others***
+
+[I still want these feature in Ruby...](https://github.com/kachick/instancevalue/issues/3)
 
 Description
 -----------
@@ -56,31 +59,7 @@ person.instance_eval{val :birthday, Time.now}   #=> Exception
 Requirements
 -------------
 
-* Expect Ruby 2.3.3 or later
-
-Install
--------
-
-```shell
-gem install instancevalue
-```
-
-Development
-----
-
-```shell
-bundle exec rake
-```
-
-Link
-----
-
-* [Home](http://kachick.github.com/instancevalue/)
-* [code](https://github.com/kachick/instancevalue)
-* [API](http://kachick.github.com/instancevalue/yard/frames.html)
-* [issues](https://github.com/kachick/instancevalue/issues)
-* [CI](http://travis-ci.org/#!/kachick/instancevalue)
-* [gem](https://rubygems.org/gems/instancevalue)
+* Require Ruby 2.3.3 or later
 
 License
 --------
